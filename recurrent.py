@@ -23,7 +23,7 @@ class RNNModel(nn.Module):
 		super(RNNModel, self).__init__()
 		self.hidden_dim=hidden_dim
 		self.layer_dim=layer_dim
-		self.rnn=nn.RNN(input_dim, hidden_dim, layer_dim, batch_first=True, nonlinearity='tanh') # relu is causing weird issues here
+		self.rnn=nn.RNN(input_dim, hidden_dim, layer_dim, batch_first=True, nonlinearity='tanh') # relu is causing loss to be nan sometimes
 		# batch_first causes the tensor to be in shape of: (batch_dim, seq_dim, input_dim)
 
 		# readout layer
